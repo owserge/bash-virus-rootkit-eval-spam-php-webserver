@@ -1,0 +1,8 @@
+#!/bin/bash                                                                                                                            
+                                                                                                                                       
+if test -z "$1"; then                                                                                                                  
+echo use $0 full_path_to_php_files                                                                                                     
+exit                                                                                                                                   
+else                                                                                                                                   
+grep -lr --include=*.php* "eval(base64_decode" $1 | xargs sed -i.bak 's/eval(base64_decode[^;]*;/ /g'                                  
+fi
