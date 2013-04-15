@@ -1,0 +1,2 @@
+rm ./_mail_eval.log
+/bin/grep -lr -i -n --include=*.php* --exclude=*.bak "eval(base64_decode" /var/www >> ./_mail_eval.log       
